@@ -67,11 +67,11 @@ export default function AuthForm({ type }: AuthFormProps) {
         isLogin ? "Login successful!" : "Account created successfully!"
       );
 
+      router.push(redirectPath);
+
       setTimeout(() => {
-        router.push(redirectPath);
         router.refresh();
-      }, 500);
-      router.refresh();
+      }, 100);
     } catch (error: any) {
       toast.error(
         error.response?.data?.message || "Something went wrong"
