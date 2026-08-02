@@ -4,6 +4,10 @@ export function middleware(request: NextRequest) {
   const token = request.cookies.get("token");
 
   console.log("Middleware Token:", token);
+   console.log(
+    "Token:",
+    request.cookies.get("token")
+  );
   const isAuthPage =
     request.nextUrl.pathname === "/login" ||
     request.nextUrl.pathname === "/register";
